@@ -1,6 +1,10 @@
 /* ==========================================================================
    DESIGN SYSTEM & VARIABLES
-   Dark Steel Blue / Enterprise Engineering Theme
+   Dark Steel Blue / Enterprise Theme with Custom Palette Accent Integration
+   Colors Applied:
+   - Soft Purple Accent: #ba1ed9
+   - Vibrant Cyan Accent: #25c0db
+   - Electric Blue Accent: #1c73d6
    ========================================================================== */
 :root {
     --bg-primary: #0b1320;
@@ -10,8 +14,11 @@
     
     --steel-blue-light: #4a6d8c;
     --steel-blue: #2c435e;
-    --accent-cyan: #00d2ff;
-    --accent-blue: #0088ff;
+    
+    /* Custom Color Palette Integration */
+    --accent-purple: #ba1ed9;
+    --accent-cyan: #25c0db;
+    --accent-blue: #1c73d6;
     
     --text-primary: #f0f4f8;
     --text-secondary: #94a3b8;
@@ -63,7 +70,7 @@ a {
 }
 
 a:hover {
-    color: var(--accent-blue);
+    color: var(--accent-purple);
 }
 
 ul {
@@ -120,7 +127,7 @@ ul {
 }
 
 .btn-primary {
-    background: linear-gradient(135deg, var(--accent-blue), var(--accent-cyan));
+    background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple));
     color: #fff;
 }
 
@@ -128,6 +135,7 @@ ul {
     opacity: 0.9;
     color: #fff;
     transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(186, 30, 217, 0.3);
 }
 
 .btn-outline {
@@ -137,8 +145,9 @@ ul {
 }
 
 .btn-outline:hover {
-    background: rgba(0, 210, 255, 0.1);
+    background: rgba(37, 192, 219, 0.1);
     transform: translateY(-2px);
+    border-color: var(--accent-cyan);
 }
 
 .btn-secondary {
@@ -149,7 +158,7 @@ ul {
 
 .btn-secondary:hover {
     background: var(--bg-card-hover);
-    color: #fff;
+    color: var(--accent-cyan);
     transform: translateY(-2px);
 }
 
@@ -187,7 +196,7 @@ ul {
 }
 
 .logo-icon {
-    color: var(--accent-cyan);
+    color: var(--accent-purple);
 }
 
 .nav-list {
@@ -226,7 +235,7 @@ ul {
 .hero-section {
     padding-top: calc(var(--navbar-height) + 80px);
     padding-bottom: 100px;
-    background: radial-gradient(circle at 80% 20%, rgba(0, 136, 255, 0.08) 0%, transparent 50%);
+    background: radial-gradient(circle at 80% 20%, rgba(28, 115, 214, 0.15) 0%, rgba(186, 30, 217, 0.05) 40%, transparent 70%);
     border-bottom: 1px solid var(--border-color);
 }
 
@@ -241,13 +250,13 @@ ul {
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    background: rgba(0, 210, 255, 0.1);
+    background: rgba(37, 192, 219, 0.1);
     color: var(--accent-cyan);
     font-family: var(--font-code);
     font-size: 0.85rem;
     padding: 6px 12px;
     border-radius: 4px;
-    border: 1px solid rgba(0, 210, 255, 0.2);
+    border: 1px solid rgba(37, 192, 219, 0.3);
     margin-bottom: 20px;
 }
 
@@ -259,7 +268,7 @@ ul {
 
 .hero-subtitle {
     font-size: 1.3rem;
-    color: var(--text-secondary);
+    color: var(--accent-cyan);
     font-weight: 400;
     margin-bottom: 20px;
 }
@@ -302,17 +311,17 @@ ul {
     align-items: center;
     gap: 10px;
     box-shadow: var(--box-shadow);
-    transition: transform var(--transition-fast);
+    transition: transform var(--transition-fast), border-color var(--transition-fast);
 }
 
 .tech-card i {
     font-size: 1.8rem;
-    color: var(--accent-cyan);
+    color: var(--accent-purple);
 }
 
 .tech-card:hover {
     transform: translateY(-5px);
-    border-color: var(--border-highlight);
+    border-color: var(--accent-cyan);
 }
 
 /* About Section */
@@ -329,9 +338,10 @@ ul {
 .about-icon {
     font-size: 2.2rem;
     color: var(--accent-cyan);
-    background: rgba(0, 210, 255, 0.1);
+    background: rgba(37, 192, 219, 0.1);
     padding: 15px;
     border-radius: 8px;
+    border: 1px solid rgba(37, 192, 219, 0.2);
 }
 
 .about-text p {
@@ -352,6 +362,11 @@ ul {
     border: 1px solid var(--border-color);
     border-radius: var(--border-radius);
     padding: 20px;
+    transition: border-color var(--transition-fast);
+}
+
+.skill-category-card:hover {
+    border-color: var(--border-highlight);
 }
 
 .category-header {
@@ -364,7 +379,7 @@ ul {
 }
 
 .category-header i {
-    color: var(--accent-cyan);
+    color: var(--accent-purple);
 }
 
 .category-header h3 {
@@ -480,12 +495,12 @@ ul {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    transition: transform var(--transition-fast);
+    transition: transform var(--transition-fast), border-color var(--transition-fast);
 }
 
 .project-card:hover {
     transform: translateY(-5px);
-    border-color: var(--border-highlight);
+    border-color: var(--accent-blue);
 }
 
 .project-header {
@@ -497,7 +512,7 @@ ul {
 
 .project-icon {
     font-size: 1.5rem;
-    color: var(--accent-cyan);
+    color: var(--accent-purple);
 }
 
 .project-title {
@@ -519,13 +534,13 @@ ul {
 }
 
 .tech-badge {
-    background: rgba(0, 210, 255, 0.08);
+    background: rgba(37, 192, 219, 0.08);
     color: var(--accent-cyan);
     font-family: var(--font-code);
     font-size: 0.75rem;
     padding: 3px 8px;
     border-radius: 4px;
-    border: 1px solid rgba(0, 210, 255, 0.15);
+    border: 1px solid rgba(37, 192, 219, 0.2);
 }
 
 .project-work-list {
@@ -581,11 +596,11 @@ ul {
 .edu-score {
     font-size: 0.85rem;
     color: var(--accent-cyan);
-    background: rgba(0, 210, 255, 0.05);
+    background: rgba(37, 192, 219, 0.08);
     display: inline-block;
     padding: 4px 8px;
     border-radius: 4px;
-    border: 1px solid rgba(0, 210, 255, 0.1);
+    border: 1px solid rgba(37, 192, 219, 0.2);
 }
 
 /* Certifications Section */
@@ -601,11 +616,16 @@ ul {
     border-radius: var(--border-radius);
     padding: 20px;
     text-align: center;
+    transition: border-color var(--transition-fast);
+}
+
+.cert-card:hover {
+    border-color: var(--accent-purple);
 }
 
 .cert-badge {
     font-size: 2rem;
-    color: var(--accent-cyan);
+    color: var(--accent-purple);
     margin-bottom: 10px;
 }
 
@@ -660,7 +680,7 @@ ul {
 
 .quote-icon {
     font-size: 1.8rem;
-    color: var(--steel-blue-light);
+    color: var(--accent-blue);
     margin-bottom: 15px;
 }
 
@@ -691,7 +711,7 @@ ul {
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: background var(--transition-fast);
+    transition: background var(--transition-fast), color var(--transition-fast);
 }
 
 .carousel-btn:hover {
@@ -731,6 +751,11 @@ ul {
     border-radius: var(--border-radius);
     padding: 20px;
     text-align: center;
+    transition: border-color var(--transition-fast);
+}
+
+.contact-card:hover {
+    border-color: var(--accent-cyan);
 }
 
 .contact-icon {
@@ -786,7 +811,7 @@ ul {
 }
 
 .footer-socials a:hover {
-    color: var(--accent-cyan);
+    color: var(--accent-purple);
 }
 
 /* ==========================================================================
