@@ -1,46 +1,33 @@
 /* ==========================================================================
    DESIGN SYSTEM & VARIABLES
-   Custom Vibrant Tech Theme
-   Colors: #ba1ed9, #25c0db, #1c73d6, #bc15d6, #1bc3cc, #cf13a3
+   Dark Steel Blue / Enterprise Engineering Theme
    ========================================================================== */
 :root {
-    /* Main Backgrounds */
-    --bg-primary: #0b111e;
-    --bg-secondary: #131c2e;
-    --bg-card: #19253b;
-    --bg-card-hover: #22324f;
+    --bg-primary: #0b1320;
+    --bg-secondary: #111c2e;
+    --bg-card: #172437;
+    --bg-card-hover: #1e2f47;
     
-    /* User Specified Colors & Accents */
-    --color-purple: #ba1ed9;
-    --color-cyan-bright: #25c0db;
-    --color-blue: #1c73d6;
-    --color-magenta: #bc15d6;
-    --color-teal: #1bc3cc;
-    --color-pink: #cf13a3;
+    --steel-blue-light: #4a6d8c;
+    --steel-blue: #2c435e;
+    --accent-cyan: #00d2ff;
+    --accent-blue: #0088ff;
     
-    /* Primary Action & Accent Highlights */
-    --accent-cyan: #25c0db;
-    --accent-blue: #1c73d6;
-    --accent-gradient: linear-gradient(135deg, #1c73d6, #ba1ed9);
-    --accent-gradient-alt: linear-gradient(135deg, #1bc3cc, #cf13a3);
-    
-    /* Typography Colors */
     --text-primary: #f0f4f8;
     --text-secondary: #94a3b8;
     --text-muted: #64748b;
     
-    /* Borders & Outlines */
     --border-color: #26384f;
-    --border-highlight: #ba1ed9;
+    --border-highlight: #3b5373;
     
-    /* Structure & Effects */
     --font-main: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
     --font-code: 'Fira Code', monospace;
+    
     --navbar-height: 70px;
     --transition-fast: 0.2s ease;
     --transition-normal: 0.3s ease;
     --border-radius: 8px;
-    --box-shadow: 0 10px 30px -10px rgba(186, 30, 217, 0.2);
+    --box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
 }
 
 /* Base Reset */
@@ -70,13 +57,13 @@ h1, h2, h3, h4 {
 }
 
 a {
-    color: var(--color-cyan-bright);
+    color: var(--accent-cyan);
     text-decoration: none;
     transition: color var(--transition-fast);
 }
 
 a:hover {
-    color: var(--color-purple);
+    color: var(--accent-blue);
 }
 
 ul {
@@ -107,7 +94,7 @@ ul {
 
 .section-subtitle {
     font-family: var(--font-code);
-    color: var(--color-teal);
+    color: var(--accent-cyan);
     font-size: 0.85rem;
     letter-spacing: 2px;
     text-transform: uppercase;
@@ -116,9 +103,6 @@ ul {
 .section-title {
     font-size: 2.2rem;
     margin-top: 5px;
-    background: var(--accent-gradient-alt);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
 }
 
 /* Buttons */
@@ -136,28 +120,25 @@ ul {
 }
 
 .btn-primary {
-    background: var(--accent-gradient);
+    background: linear-gradient(135deg, var(--accent-blue), var(--accent-cyan));
     color: #fff;
-    box-shadow: 0 4px 15px rgba(186, 30, 217, 0.4);
 }
 
 .btn-primary:hover {
-    opacity: 0.95;
+    opacity: 0.9;
     color: #fff;
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(186, 30, 217, 0.6);
 }
 
 .btn-outline {
-    border-color: var(--color-teal);
-    color: var(--color-teal);
+    border-color: var(--accent-cyan);
+    color: var(--accent-cyan);
     background: transparent;
 }
 
 .btn-outline:hover {
-    background: rgba(27, 195, 204, 0.15);
+    background: rgba(0, 210, 255, 0.1);
     transform: translateY(-2px);
-    color: var(--color-cyan-bright);
 }
 
 .btn-secondary {
@@ -168,7 +149,6 @@ ul {
 
 .btn-secondary:hover {
     background: var(--bg-card-hover);
-    border-color: var(--color-pink);
     color: #fff;
     transform: translateY(-2px);
 }
@@ -180,7 +160,7 @@ ul {
     left: 0;
     width: 100%;
     height: var(--navbar-height);
-    background: rgba(11, 17, 30, 0.9);
+    background: rgba(11, 19, 32, 0.85);
     backdrop-filter: blur(10px);
     border-bottom: 1px solid var(--border-color);
     z-index: 1000;
@@ -207,7 +187,7 @@ ul {
 }
 
 .logo-icon {
-    color: var(--color-purple);
+    color: var(--accent-cyan);
 }
 
 .nav-list {
@@ -224,7 +204,7 @@ ul {
 
 .nav-link:hover,
 .nav-link.active {
-    color: var(--color-cyan-bright);
+    color: var(--accent-cyan);
 }
 
 .nav-actions {
@@ -246,7 +226,7 @@ ul {
 .hero-section {
     padding-top: calc(var(--navbar-height) + 80px);
     padding-bottom: 100px;
-    background: radial-gradient(circle at 80% 20%, rgba(186, 30, 217, 0.15) 0%, rgba(28, 115, 214, 0.05) 50%, transparent 80%);
+    background: radial-gradient(circle at 80% 20%, rgba(0, 136, 255, 0.08) 0%, transparent 50%);
     border-bottom: 1px solid var(--border-color);
 }
 
@@ -261,13 +241,13 @@ ul {
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    background: rgba(27, 195, 204, 0.1);
-    color: var(--color-teal);
+    background: rgba(0, 210, 255, 0.1);
+    color: var(--accent-cyan);
     font-family: var(--font-code);
     font-size: 0.85rem;
     padding: 6px 12px;
     border-radius: 4px;
-    border: 1px solid rgba(27, 195, 204, 0.3);
+    border: 1px solid rgba(0, 210, 255, 0.2);
     margin-bottom: 20px;
 }
 
@@ -275,15 +255,12 @@ ul {
     font-size: 3rem;
     letter-spacing: -1px;
     margin-bottom: 5px;
-    background: linear-gradient(135deg, #ffffff 0%, var(--color-cyan-bright) 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
 }
 
 .hero-subtitle {
     font-size: 1.3rem;
-    color: var(--color-magenta);
-    font-weight: 500;
+    color: var(--text-secondary);
+    font-weight: 400;
     margin-bottom: 20px;
 }
 
@@ -325,18 +302,17 @@ ul {
     align-items: center;
     gap: 10px;
     box-shadow: var(--box-shadow);
-    transition: all var(--transition-fast);
+    transition: transform var(--transition-fast);
 }
 
 .tech-card i {
     font-size: 1.8rem;
-    color: var(--color-pink);
+    color: var(--accent-cyan);
 }
 
 .tech-card:hover {
     transform: translateY(-5px);
-    border-color: var(--color-purple);
-    box-shadow: 0 10px 25px -5px rgba(186, 30, 217, 0.4);
+    border-color: var(--border-highlight);
 }
 
 /* About Section */
@@ -352,11 +328,10 @@ ul {
 
 .about-icon {
     font-size: 2.2rem;
-    color: var(--color-cyan-bright);
-    background: rgba(37, 192, 219, 0.1);
+    color: var(--accent-cyan);
+    background: rgba(0, 210, 255, 0.1);
     padding: 15px;
     border-radius: 8px;
-    border: 1px solid rgba(37, 192, 219, 0.2);
 }
 
 .about-text p {
@@ -377,11 +352,6 @@ ul {
     border: 1px solid var(--border-color);
     border-radius: var(--border-radius);
     padding: 20px;
-    transition: border-color var(--transition-fast);
-}
-
-.skill-category-card:hover {
-    border-color: var(--color-blue);
 }
 
 .category-header {
@@ -394,7 +364,7 @@ ul {
 }
 
 .category-header i {
-    color: var(--color-magenta);
+    color: var(--accent-cyan);
 }
 
 .category-header h3 {
@@ -409,8 +379,8 @@ ul {
 
 .skill-tag {
     background: var(--bg-primary);
-    border: 1px solid rgba(27, 195, 204, 0.3);
-    color: var(--color-teal);
+    border: 1px solid var(--border-color);
+    color: var(--text-secondary);
     padding: 5px 10px;
     border-radius: 4px;
     font-size: 0.85rem;
@@ -431,7 +401,7 @@ ul {
     left: 20px;
     height: 100%;
     width: 2px;
-    background: linear-gradient(to bottom, var(--color-purple), var(--color-blue));
+    background: var(--border-color);
 }
 
 .timeline-item {
@@ -448,11 +418,11 @@ ul {
     height: 34px;
     border-radius: 50%;
     background: var(--bg-card);
-    border: 2px solid var(--color-purple);
+    border: 2px solid var(--accent-cyan);
     display: flex;
     align-items: center;
     justify-content: center;
-    color: var(--color-purple);
+    color: var(--accent-cyan);
     font-size: 0.85rem;
 }
 
@@ -478,8 +448,8 @@ ul {
 
 .company-name {
     font-size: 0.95rem;
-    color: var(--color-cyan-bright);
-    font-weight: 500;
+    color: var(--accent-cyan);
+    font-weight: 400;
 }
 
 .timeline-date {
@@ -510,13 +480,12 @@ ul {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    transition: all var(--transition-fast);
+    transition: transform var(--transition-fast);
 }
 
 .project-card:hover {
     transform: translateY(-5px);
-    border-color: var(--color-pink);
-    box-shadow: 0 10px 25px -5px rgba(207, 19, 163, 0.3);
+    border-color: var(--border-highlight);
 }
 
 .project-header {
@@ -528,7 +497,7 @@ ul {
 
 .project-icon {
     font-size: 1.5rem;
-    color: var(--color-purple);
+    color: var(--accent-cyan);
 }
 
 .project-title {
@@ -550,13 +519,13 @@ ul {
 }
 
 .tech-badge {
-    background: rgba(186, 30, 217, 0.1);
-    color: var(--color-purple);
+    background: rgba(0, 210, 255, 0.08);
+    color: var(--accent-cyan);
     font-family: var(--font-code);
     font-size: 0.75rem;
     padding: 3px 8px;
     border-radius: 4px;
-    border: 1px solid rgba(186, 30, 217, 0.3);
+    border: 1px solid rgba(0, 210, 255, 0.15);
 }
 
 .project-work-list {
@@ -588,7 +557,7 @@ ul {
 
 .edu-icon {
     font-size: 1.5rem;
-    color: var(--color-blue);
+    color: var(--accent-cyan);
 }
 
 .edu-year {
@@ -611,12 +580,12 @@ ul {
 
 .edu-score {
     font-size: 0.85rem;
-    color: var(--color-teal);
-    background: rgba(27, 195, 204, 0.1);
+    color: var(--accent-cyan);
+    background: rgba(0, 210, 255, 0.05);
     display: inline-block;
     padding: 4px 8px;
     border-radius: 4px;
-    border: 1px solid rgba(27, 195, 204, 0.2);
+    border: 1px solid rgba(0, 210, 255, 0.1);
 }
 
 /* Certifications Section */
@@ -632,16 +601,11 @@ ul {
     border-radius: var(--border-radius);
     padding: 20px;
     text-align: center;
-    transition: border-color var(--transition-fast);
-}
-
-.cert-card:hover {
-    border-color: var(--color-cyan-bright);
 }
 
 .cert-badge {
     font-size: 2rem;
-    color: var(--color-pink);
+    color: var(--accent-cyan);
     margin-bottom: 10px;
 }
 
@@ -696,7 +660,7 @@ ul {
 
 .quote-icon {
     font-size: 1.8rem;
-    color: var(--color-magenta);
+    color: var(--steel-blue-light);
     margin-bottom: 15px;
 }
 
@@ -732,8 +696,7 @@ ul {
 
 .carousel-btn:hover {
     background: var(--bg-card-hover);
-    color: var(--color-purple);
-    border-color: var(--color-purple);
+    color: var(--accent-cyan);
 }
 
 .carousel-indicators {
@@ -752,7 +715,7 @@ ul {
 }
 
 .indicator.active {
-    background: var(--color-purple);
+    background: var(--accent-cyan);
 }
 
 /* Contact Section */
@@ -768,16 +731,11 @@ ul {
     border-radius: var(--border-radius);
     padding: 20px;
     text-align: center;
-    transition: border-color var(--transition-fast);
-}
-
-.contact-card:hover {
-    border-color: var(--color-teal);
 }
 
 .contact-icon {
     font-size: 1.5rem;
-    color: var(--color-cyan-bright);
+    color: var(--accent-cyan);
     margin-bottom: 10px;
 }
 
@@ -828,7 +786,7 @@ ul {
 }
 
 .footer-socials a:hover {
-    color: var(--color-purple);
+    color: var(--accent-cyan);
 }
 
 /* ==========================================================================
